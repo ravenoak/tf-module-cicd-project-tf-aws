@@ -52,7 +52,7 @@ variable "admin_role_arn" {
   description = "The ARN of the IAM role that should have access to the Terraform roles"
   type        = string
   validation {
-    condition     = can(regex("arn:aws:iam::.*:role/.*", var.admin_role_arn))
+    condition     = can(regex("arn:aws:iam::.*:(role|user)/.*", var.admin_role_arn))
     error_message = "Admin role ARN must be in the format arn:aws:iam::account-id:role/role-name"
   }
 }
