@@ -71,7 +71,7 @@ variable "actor_inline_policy" {
   description = "The inline policy for the actor role, in JSON format"
   type        = string
   validation {
-    condition     = can(jsondecode(var.actor_inline_policy))
+    condition     = var.actor_inline_policy == null || can(jsondecode(var.actor_inline_policy))
     error_message = "Inline policy must be valid JSON"
   }
   default = null

@@ -19,8 +19,8 @@ data "aws_iam_policy_document" "terraform_oidc_permissions" {
   statement {
     actions = ["sts:AssumeRole"]
     resources = [
-      "arn:aws:iam::${var.aws_account_id}:role/${var.actor_role_name}",
-      "arn:aws:iam::${var.aws_account_id}:role/${var.state_role_name}"
+      "arn:aws:iam::${var.aws_account_id}:role/${local.actor_role_name}",
+      "arn:aws:iam::${var.aws_account_id}:role/${local.state_role_name}"
     ]
   }
 }
