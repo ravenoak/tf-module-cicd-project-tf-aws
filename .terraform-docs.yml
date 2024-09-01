@@ -1,0 +1,5 @@
+header-from: "README.header.md"
+output:
+  file: "README.md"
+  mode: "replace"
+formatter: "markdown table"
